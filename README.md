@@ -1,8 +1,6 @@
 # re-binary
 a game like Factorio, where you build a refinery to process precious materials, but instead of ores you are processing bits to make bytes, bytes to make Kilobytes, and so on.
 ## Features/do:
-- config loading
-- config editing
 - main loop
 - game loop
 - key input
@@ -23,6 +21,8 @@ a game like Factorio, where you build a refinery to process precious materials, 
 - structure functionality (make structures do shit)
 - add bugs (not to the code, as an enemy to fight as a reference to not only computer bugs but also the ones you fight in factorio)
 - add weapons (to fight the bugs (not sure what weapons yet))
+- config loading
+- config editing
 - map (make the map generate randomly)
 - add menus for settings (to change your config also don't forget reset to default)
 - add new game and load game
