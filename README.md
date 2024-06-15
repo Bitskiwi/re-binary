@@ -1,10 +1,7 @@
 # re-binary
 a game like Factorio, where you build a refinery to process precious materials, but instead of ores you are processing bits to make bytes, bytes to make Kilobytes, and so on.
 ## Features/do:
-- main loop
-- game loop
-- key input
-- sprite rendering (using .rbimg files which will contain special instructions to be read and rendered by the game)
+- sprite rendering
 - player
 - player movement
 - world tiles and textures (also uses .rbimg)
@@ -31,3 +28,6 @@ a game like Factorio, where you build a refinery to process precious materials, 
 ## Features/done:
 - Text based screen to render game on
 - Screen methods for fill and draw
+- game loop
+- key input
+

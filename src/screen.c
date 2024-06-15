@@ -13,6 +13,7 @@ char BLUE[8] = "\e[0;34m";
 char MAGENTA[8] = "\e[0;35m";
 char CYAN[8] = "\e[0;36m";
 char WHITE[8] = "\e[0;37m";
+char CLEAR[8] = "clear";
 
 // SCREEN STRUCTURE
 
