@@ -5,15 +5,15 @@
 
 // COLORS
 
-char BLACK[8] = "\e[0;30m";
+char BLK[8] = "\e[0;30m";
 char RED[8] = "\e[0;31m";
-char GREEN[8] = "\e[0;32m";
-char YELLOW[8] = "\e[0;33m";
-char BLUE[8] = "\e[0;34m";
-char MAGENTA[8] = "\e[0;35m";
-char CYAN[8] = "\e[0;36m";
-char WHITE[8] = "\e[0;37m";
-char CLEAR[8] = "clear";
+char GRN[8] = "\e[0;32m";
+char YEL[8] = "\e[0;33m";
+char BLU[8] = "\e[0;34m";
+char MAG[8] = "\e[0;35m";
+char CYN[8] = "\e[0;36m";
+char WHT[8] = "\e[0;37m";
+char CLR[8] = "CLR";
 
 // SCREEN STRUCTURE
 
