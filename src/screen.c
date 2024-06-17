@@ -35,7 +35,11 @@ struct screen new_screen(int w, int h){
 // SCREEN DRAW
 
 struct screen draw_screen(struct screen surface, int x, int y, char draw_color[8]){
-	strcpy(surface.colors[y][x], draw_color);
+	if(x >= 0 && x <= surface.w){
+		if(y >= 0 && y <= surface.h){
+			strcpy(surface.colors[y][x], draw_color);
+		}
+	}
 	return surface;
 }
 

@@ -3,21 +3,21 @@
 #include <string.h>
 #include "screen.c"
 
-// TEST SPRITE
+// TEST IMG
 
 
-// SPRITE STRUCTURE
+// IMG STRUCTURE
 
-struct sprite{
+struct img{
 	char colors[20][20][8];
 	int w;
 	int h;
 };
 
-// SPRITE CONSTRUCTOR
+// IMG CONSTRUCTOR
 
-struct sprite new_sprite(char *colors[20][20], int w, int h){
-	struct sprite instance;
+struct img new_img(char *colors[20][20], int w, int h){
+	struct img instance;
 	for(int y = 0; y < h; y++){
 		for(int x = 0; x < w; x++){
 			strcpy(instance.colors[y][x], colors[y][x]);
@@ -28,9 +28,9 @@ struct sprite new_sprite(char *colors[20][20], int w, int h){
 	return instance;
 }
 
-// RENDER SPRITE
+// RENDER IMG
 
-struct screen draw_sprite(struct screen surface, int start_x, int start_y, struct sprite source){
+struct screen draw_img(struct screen surface, int start_x, int start_y, struct img source){
 	for(int y = 0; y < source.h; y++){
 		for(int x = 0; x < source.w; x++){
 			if(strcmp(source.colors[y][x], "CLR") != 0){
