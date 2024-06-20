@@ -2,8 +2,10 @@
 
 #include "entity.c"
 #include "img.c"
-#include "assets/player/idle_n.h"
-#include "assets/player/idle_s.h"
+#include "assets/terry/idle_s.h"
+#include "assets/terry/idle_e.h"
+#include "assets/terry/idle_n.h"
+#include "assets/terry/idle_w.h"
 
 // CHARACTER STRUCTURE
 
@@ -18,9 +20,9 @@ struct character{
 
 struct character init_character(int x, int y, int w, int h){
 	struct img idle_s = new_img(idle_s_data, 10, 10);
-	struct img idle_e = new_img(idle_s_data, 10, 10);
+	struct img idle_e = new_img(idle_e_data, 10, 10);
 	struct img idle_n = new_img(idle_n_data, 10, 10);
-	struct img idle_w = new_img(idle_n_data, 10, 10);
+	struct img idle_w = new_img(idle_w_data, 10, 10);
 	struct img idle[4] = {idle_s, idle_e, idle_n, idle_w};
 	struct character instance;
 	instance.ent = new_entity(x, y, w, h);
