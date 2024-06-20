@@ -2,6 +2,7 @@
 
 #include "entity.c"
 #include "img.c"
+#include "assets/player/idl"
 
 // CHARACTER STRUCTURE
 
@@ -14,8 +15,9 @@ struct character{
 
 // CHARACTER CONSTRUCTOR
 
-struct character new_character(int x, int y, int w, int h, struct img idle[4]){
+struct character init_character(int x, int y, int w, int h){
 	struct character instance;
+	struct img idle[4] = {}  /////////////////////////////// WORK ON THIS LINE
 	instance.ent = new_entity(x, y, w, h);
 	for(int i = 0; i < 4; i++){
 		instance.idle[i] = idle[i];
