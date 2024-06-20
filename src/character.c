@@ -2,7 +2,8 @@
 
 #include "entity.c"
 #include "img.c"
-#include "assets/player/idl"
+#include "assets/player/idle_n.h"
+#include "assets/player/idle_s.h"
 
 // CHARACTER STRUCTURE
 
@@ -10,20 +11,24 @@ struct character{
 	struct entity ent;
 	struct img sprite;
 	struct img idle[4]; 
-	int facing;
+	enum direction facing;
 };
 
 // CHARACTER CONSTRUCTOR
 
 struct character init_character(int x, int y, int w, int h){
+	struct img idle_s = new_img(idle_s_data, 10, 10);
+	struct img idle_e = new_img(idle_s_data, 10, 10);
+	struct img idle_n = new_img(idle_n_data, 10, 10);
+	struct img idle_w = new_img(idle_n_data, 10, 10);
+	struct img idle[4] = {idle_s, idle_e, idle_n, idle_w};
 	struct character instance;
-	struct img idle[4] = {}  /////////////////////////////// WORK ON THIS LINE
 	instance.ent = new_entity(x, y, w, h);
 	for(int i = 0; i < 4; i++){
 		instance.idle[i] = idle[i];
 	}
-	instance.facing = 3;
-	instance.sprite = instance.idle[instance.facing - 1];
+	instance.facing = south;
+	instance.sprite = instance.idle[instance.facing];
 	return instance;
 }
 
@@ -38,21 +43,21 @@ struct screen draw_character(struct screen surface, struct character player){
 
 struct character control_character(char key, struct character player){
 	if(key == 'w'){
-		player.facing = 3;
-		player.ent.y -= 1;
+		player.facing = north;
+		player.ent.y -= 10;
 	}
 	if(key == 'a'){
-		player.facing = 2;
-		player.ent.x -= 1;
+		player.facing = west;
+		player.ent.x -= 10;
 	}
 	if(key == 's'){
-		player.facing = 1;
-		player.ent.y += 1;
+		player.facing = south;
+		player.ent.y += 10;
 	}
 	if(key == 'd'){
-		player.facing = 4;
-		player.ent.x += 1;
+		player.facing = east;
+		player.ent.x += 10;
 	}
-	player.sprite = player.idle[player.facing - 1];
+	player.sprite = player.idle[player.facing];
 	return player;
 }
