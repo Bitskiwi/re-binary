@@ -15,7 +15,7 @@ int main(){
 	term.c_lflag &= ~(ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, TCSANOW, &term);
 
-	struct screen surface = new_screen(100, 50);
+	struct screen surface = new_screen(80, 40);
 	surface = fill_screen(surface, GRN);
 
 	struct character terry = init_character(0, 0, 10, 10);
