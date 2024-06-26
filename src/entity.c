@@ -1,3 +1,7 @@
+//INCLUDES
+
+#include "entity.h"
+
 // ENTITY STRUCTURE
 
 struct entity{

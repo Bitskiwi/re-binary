@@ -1,19 +1,20 @@
 // INCLUDES
 
+#include "img.h"
 #include <stdio.h>
 #include <string.h>
 
 // COLORS
 
-char BLK[8] = "\e[0;30m";
-char RED[8] = "\e[0;31m";
-char GRN[8] = "\e[0;32m";
-char YEL[8] = "\e[0;33m";
-char BLU[8] = "\e[0;34m";
-char MAG[8] = "\e[0;35m";
-char CYN[8] = "\e[0;36m";
-char WHT[8] = "\e[0;37m";
-char CLR[8] = "CLR";
+BLK[8] = "\e[0;30m";
+RED[8] = "\e[0;31m";
+GRN[8] = "\e[0;32m";
+YEL[8] = "\e[0;33m";
+BLU[8] = "\e[0;34m";
+MAG[8] = "\e[0;35m";
+CYN[8] = "\e[0;36m";
+WHT[8] = "\e[0;37m";
+CLR[8] = "CLR";
 
 // SCREEN STRUCTURE
 

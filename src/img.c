@@ -1,5 +1,6 @@
 // INCLUDES
 
+#include "img.h"
 #include <string.h>
 #include "screen.c"
 

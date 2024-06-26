@@ -1,7 +1,8 @@
 // INCLUDES
 
-#include "entity.c"
-#include "img.c"
+#include "character.h"
+#include "entity.h"
+#include "img.h"
 #include "assets/terry/idle_s.h"
 #include "assets/terry/idle_e.h"
 #include "assets/terry/idle_n.h"
