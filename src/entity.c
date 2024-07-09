@@ -1,15 +1,6 @@
 //INCLUDES
 
-#include "entity.h"
-
-// ENTITY STRUCTURE
-
-struct entity{
-	int x;
-	int y;
-	int w;
-	int h;
-};
+#include "head/entity.h"
 
 // ENTITY CONSTRUCTOR
 
@@ -21,11 +12,3 @@ struct entity new_entity(int x, int y, int w, int h){
 	instance.h = h;
 }
 
-// DIRECTION ENUM
-
-enum direction {
-	south,
-	east,
-	north,
-	west
-};

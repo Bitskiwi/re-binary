@@ -1,3 +1,14 @@
+// HEADER GUARD
+
+#ifndef IDLE_W_H
+#define IDLE_W_H
+
+// INCLUDES
+
+#include "../../head/screen.h"
+
+// DATA
+
 char *idle_w_data[20][20] = {
 	{CLR,CLR,CLR,YEL,YEL,YEL,YEL,CLR,CLR,CLR},
 	{CLR,CLR,YEL,YEL,YEL,YEL,YEL,YEL,CLR,CLR},
@@ -10,3 +21,5 @@ char *idle_w_data[20][20] = {
 	{CLR,CLR,CLR,CLR,BLK,BLK,CLR,CLR,CLR,CLR},
 	{CLR,CLR,CLR,BLK,BLK,BLK,CLR,CLR,CLR,CLR},
 };
+
+#endif

@@ -5,7 +5,11 @@
 
 // IMG STRUCTURE
 
-struct img;
+struct img{
+	char colors[20][20][8];
+	int w;
+	int h;
+};
 
 // IMG CONSTRUCTOR
 

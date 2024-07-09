@@ -1,28 +1,8 @@
 // INCLUDES
 
-#include "img.h"
+#include "head/screen.h"
 #include <stdio.h>
 #include <string.h>
-
-// COLORS
-
-BLK[8] = "\e[0;30m";
-RED[8] = "\e[0;31m";
-GRN[8] = "\e[0;32m";
-YEL[8] = "\e[0;33m";
-BLU[8] = "\e[0;34m";
-MAG[8] = "\e[0;35m";
-CYN[8] = "\e[0;36m";
-WHT[8] = "\e[0;37m";
-CLR[8] = "CLR";
-
-// SCREEN STRUCTURE
-
-struct screen{
-	char colors[100][100][8];
-	int w;
-	int h;
-};
 
 // SCREEN CONSTRUCTOR
 

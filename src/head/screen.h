@@ -5,19 +5,25 @@
 
 // COLORS
 
-char BLK[8];
-char RED[8];
-char GRN[8];
-char YEL[8];
-char BLU[8];
-char MAG[8];
-char CYN[8];
-char WHT[8];
-char CLR[8];
+// COLORS
+
+char BLK[8] = "\e[0;30m";
+char RED[8] = "\e[0;31m";
+char GRN[8] = "\e[0;32m";
+char YEL[8] = "\e[0;33m";
+char BLU[8] = "\e[0;34m";
+char MAG[8] = "\e[0;35m";
+char CYN[8] = "\e[0;36m";
+char WHT[8] = "\e[0;37m";
+char CLR[8] = "CLR";
 
 // SCREEN STRUCTURE
 
-struct screen;
+struct screen{
+	char colors[100][100][8];
+	int w;
+	int h;
+};
 
 // SCREEN CONSTRUCTOR
 

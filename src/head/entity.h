@@ -5,7 +5,12 @@
 
 // ENTITY STRUCTURE
 
-struct entity;
+struct entity{
+	int x;
+	int y;
+	int w;
+	int h;
+};
 
 // ENTITY CONSTRUCTOR
 
@@ -13,6 +18,11 @@ struct entity new_entity(int x, int y, int w, int h);
 
 // DIRECTION ENUM
 
-enum direction;
+enum direction {
+	south,
+	east,
+	north,
+	west
+};
 
 #endif

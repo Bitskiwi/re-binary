@@ -1,21 +1,12 @@
 // INCLUDES
 
-#include "character.h"
-#include "entity.h"
-#include "img.h"
+#include "head/character.h"
+#include "head/entity.h"
+#include "head/img.h"
 #include "assets/terry/idle_s.h"
 #include "assets/terry/idle_e.h"
 #include "assets/terry/idle_n.h"
 #include "assets/terry/idle_w.h"
-
-// CHARACTER STRUCTURE
-
-struct character{
-	struct entity ent;
-	struct img sprite;
-	struct img idle[4]; 
-	enum direction facing;
-};
 
 // CHARACTER CONSTRUCTOR
 

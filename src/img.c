@@ -1,19 +1,8 @@
 // INCLUDES
 
-#include "img.h"
+#include "head/img.h"
+#include "head/screen.h"
 #include <string.h>
-#include "screen.c"
-
-// TEST IMG
-
-
-// IMG STRUCTURE
-
-struct img{
-	char colors[20][20][8];
-	int w;
-	int h;
-};
 
 // IMG CONSTRUCTOR
 
