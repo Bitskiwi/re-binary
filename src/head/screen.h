@@ -5,17 +5,15 @@
 
 // COLORS
 
-// COLORS
-
-char BLK[8] = "\e[0;30m";
-char RED[8] = "\e[0;31m";
-char GRN[8] = "\e[0;32m";
-char YEL[8] = "\e[0;33m";
-char BLU[8] = "\e[0;34m";
-char MAG[8] = "\e[0;35m";
-char CYN[8] = "\e[0;36m";
-char WHT[8] = "\e[0;37m";
-char CLR[8] = "CLR";
+#define BLK "\e[0;30m"
+#define RED "\e[0;31m"
+#define GRN "\e[0;32m"
+#define YEL "\e[0;33m"
+#define BLU "\e[0;34m"
+#define MAG "\e[0;35m"
+#define CYN "\e[0;36m"
+#define WHT "\e[0;37m"
+#define CLR "CLR"
 
 // SCREEN STRUCTURE
 
