@@ -4,6 +4,7 @@
 #include "head/img.h"
 #include "head/entity.h"
 #include "head/character.h"
+#include "head/world.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
