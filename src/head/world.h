@@ -17,4 +17,16 @@ typedef struct {
 	int h;
 } tile;
 
+// TILE CODES
+
+typedef enum {
+	grass,
+	dirt,
+	stone,
+} tile_code;
+
+// TILE CONSTRUCTOR
+
+tile init_tile();
+
 #endif

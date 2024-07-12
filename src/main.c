@@ -25,6 +25,7 @@ int main(){
 
 	struct character terry = init_character(0, 0, 10, 10);
 	char key = 's';
+	init_tile(grass);
 	while(1){
 		printf("\033[H");
 		surface = fill_screen(surface, GRN);
