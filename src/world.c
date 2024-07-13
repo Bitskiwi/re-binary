@@ -2,16 +2,21 @@
 
 #include "head/world.h"
 #include "head/img.h"
-#include "head/entity.h"
+#include "assets/tiles/grass.h"
 #include <stdio.h>
 
 // TILE CONSTRUCTOR
 
-tile init_tile(tile_code code){
+tile init_tile(tile_type type, int x, int y){
 	tile inst;
-	switch(code){
+	switch(type){
 		case grass:
-			printf("grass");
+			inst.type = type;
+			inst.x = x;
+			inst.y = y;
+			inst.w = 10;
+			inst.h = 10;
+			inst.sprite = init_img(grass_data, 10, 10);
 	}
 	return inst;
 }

@@ -3,21 +3,24 @@
 #ifndef IMG_H
 #define IMG_H
 
+// INCLUDES
+
+#include "screen.h"
+
 // IMG STRUCTURE
 
-struct img{
+typedef struct {
 	char colors[20][20][8];
 	int w;
 	int h;
-};
+} img;
 
 // IMG CONSTRUCTOR
 
-struct img new_img(char *colors[20][20], int w, int h);
-
+img init_img(char *colors[20][20], int w, int h);
 
 // RENDER IMG
 
-struct screen draw_img(struct screen surface, int start_x, int start_y, struct img source);
+screen draw_img(screen surface, int start_x, int start_y, img source);
 
 #endif

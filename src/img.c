@@ -6,21 +6,21 @@
 
 // IMG CONSTRUCTOR
 
-struct img new_img(char *colors[20][20], int w, int h){
-	struct img instance;
+img init_img(char *colors[20][20], int w, int h){
+	img inst;
 	for(int y = 0; y < h; y++){
 		for(int x = 0; x < w; x++){
-			strcpy(instance.colors[y][x], colors[y][x]);
+			strcpy(inst.colors[y][x], colors[y][x]);
 		}
 	}
-	instance.w = w;
-	instance.h = h;
-	return instance;
+	inst.w = w;
+	inst.h = h;
+	return inst;
 }
 
 // RENDER IMG
 
-struct screen draw_img(struct screen surface, int start_x, int start_y, struct img source){
+screen draw_img(screen surface, int start_x, int start_y, img source){
 	for(int y = 0; y < source.h; y++){
 		for(int x = 0; x < source.w; x++){
 			if(strcmp(source.colors[y][x], "CLR") != 0){

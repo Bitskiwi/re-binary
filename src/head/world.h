@@ -6,16 +6,6 @@
 // INCLUDES
 
 #include "img.h"
-#include "entity.h"
-
-// TILE STRUCTURE
-
-typedef struct {
-	int x;
-	int y;
-	int w;
-	int h;
-} tile;
 
 // TILE CODES
 
@@ -23,7 +13,18 @@ typedef enum {
 	grass,
 	dirt,
 	stone,
-} tile_code;
+} tile_type;
+
+// TILE STRUCTURE
+
+typedef struct {
+	tile_type type;
+	int x;
+	int y;
+	int w;
+	int h;
+	img sprite;
+} tile;
 
 // TILE CONSTRUCTOR
 

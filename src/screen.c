@@ -6,16 +6,16 @@
 
 // SCREEN CONSTRUCTOR
 
-struct screen new_screen(int w, int h){
-	struct screen instance;
-	instance.w = w;
-	instance.h = h;
-	return instance;
+screen init_screen(int w, int h){
+	screen inst;
+	inst.w = w;
+	inst.h = h;
+	return inst;
 }
 
 // SCREEN DRAW
 
-struct screen draw_screen(struct screen surface, int x, int y, char draw_color[8]){
+screen draw_screen(screen surface, int x, int y, char draw_color[8]){
 	if(x >= 0 && x <= surface.w){
 		if(y >= 0 && y <= surface.h){
 			strcpy(surface.colors[y][x], draw_color);
@@ -26,7 +26,7 @@ struct screen draw_screen(struct screen surface, int x, int y, char draw_color[8
 
 // SCREEN FILL
 
-struct screen fill_screen(struct screen surface, char fill_color[8]){
+screen fill_screen(screen surface, char fill_color[8]){
 	for(int y = 0; y < surface.h; y++){
 		for(int x = 0; x < surface.w; x++){
 			surface = draw_screen(surface, x, y, fill_color);
@@ -37,7 +37,7 @@ struct screen fill_screen(struct screen surface, char fill_color[8]){
 
 // SCREEN RENDER
 
-void render_screen(struct screen surface){
+void render_screen(screen surface){
 	for(int y = 0; y < surface.h; y++){
 		for(int x = 0; x < surface.w; x++){
 			printf(surface.colors[y][x]);

@@ -1,7 +1,7 @@
 // INCLUDES
 
 #include "head/character.h"
-#include "head/entity.h"
+#include "head/direction.h"
 #include "head/img.h"
 #include "assets/terry/idle_s.h"
 #include "assets/terry/idle_e.h"
@@ -10,48 +10,52 @@
 
 // CHARACTER CONSTRUCTOR
 
-struct character init_character(int x, int y, int w, int h){
-	struct img idle_s = new_img(idle_s_data, 10, 10);
-	struct img idle_e = new_img(idle_e_data, 10, 10);
-	struct img idle_n = new_img(idle_n_data, 10, 10);
-	struct img idle_w = new_img(idle_w_data, 10, 10);
-	struct img idle[4] = {idle_s, idle_e, idle_n, idle_w};
-	struct character instance;
-	instance.ent = new_entity(x, y, w, h);
+character init_character(int x, int y, int w, int h){
+	img idle_s = init_img(idle_s_data, 10, 10);
+	img idle_e = init_img(idle_e_data, 10, 10);
+	img idle_n = init_img(idle_n_data, 10, 10);
+	img idle_w = init_img(idle_w_data, 10, 10);
+	img idle[4] = {idle_s, idle_e, idle_n, idle_w};
+	character inst;
+	inst.x = x;
+	inst.y = y;
+	inst.w = w;
+	inst.h = h;
+	inst.speed = 10;
 	for(int i = 0; i < 4; i++){
-		instance.idle[i] = idle[i];
+		inst.idle[i] = idle[i];
 	}
-	instance.facing = south;
-	instance.sprite = instance.idle[instance.facing];
-	return instance;
+	inst.facing = south;
+	inst.sprite = inst.idle[inst.facing];
+	return inst;
 }
 
 // CHARACTER RENDER
 
-struct screen draw_character(struct screen surface, struct character player){
-	surface = draw_img(surface, player.ent.x, player.ent.y, player.sprite);
+screen draw_character(screen surface, character terry){
+	surface = draw_img(surface, terry.x, terry.y, terry.sprite);
 	return surface;
 }
 
 // CHARACTER CONTROLLER
 
-struct character control_character(char key, struct character player){
+character control_character(char key, character terry){
 	if(key == 'w'){
-		player.facing = north;
-		player.ent.y -= 10;
+		terry.facing = north;
+		terry.y -= terry.speed;
 	}
 	if(key == 'a'){
-		player.facing = west;
-		player.ent.x -= 10;
+		terry.facing = west;
+		terry.x -= terry.speed;
 	}
 	if(key == 's'){
-		player.facing = south;
-		player.ent.y += 10;
+		terry.facing = south;
+		terry.y += terry.speed;
 	}
 	if(key == 'd'){
-		player.facing = east;
-		player.ent.x += 10;
+		terry.facing = east;
+		terry.x += terry.speed;
 	}
-	player.sprite = player.idle[player.facing];
-	return player;
+	terry.sprite = terry.idle[terry.facing];
+	return terry;
 }

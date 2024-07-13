@@ -6,27 +6,31 @@
 // INCLUDES
 
 #include "img.h"
-#include "entity.h"
+#include "direction.h"
 
 // CHARACTER STRUCTURE
 
-struct character {
-	struct entity ent;
-	struct img sprite;
-	struct img idle[4];
-	enum direction facing;
-};
+typedef struct {
+	int x;
+	int y;
+	int w;
+	int h;
+	int speed;
+	img sprite;
+	img idle[4];
+	direction facing;
+} character;
 
 // CHARACTER CONSTRUCTOR
 
-struct character init_character(int x, int y, int w, int h);
+character init_character(int x, int y, int w, int h);
 
 // CHARACTER RENDER
 
-struct screen draw_character(struct screen surface, struct character player);
+screen draw_character(screen surface, character terry);
 
 // CHARACTER CONTROLLER
 
-struct character control_character(char key, struct character player);
+character control_character(char key, character terry);
 
 #endif

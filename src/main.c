@@ -2,7 +2,7 @@
 
 #include "head/screen.h"
 #include "head/img.h"
-#include "head/entity.h"
+#include "head/direction.h"
 #include "head/character.h"
 #include "head/world.h"
 #include <stdio.h>
@@ -20,12 +20,11 @@ int main(){
 	term.c_lflag &= ~(ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, TCSANOW, &term);
 
-	struct screen surface = new_screen(80, 40);
+	screen surface = init_screen(80, 40);
 	surface = fill_screen(surface, GRN);
 
-	struct character terry = init_character(0, 0, 10, 10);
+	character terry = init_character(0, 0, 10, 10);
 	char key = 's';
-	init_tile(grass);
 	while(1){
 		printf("\033[H");
 		surface = fill_screen(surface, GRN);

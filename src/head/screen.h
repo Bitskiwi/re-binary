@@ -13,30 +13,44 @@
 #define MAG "\e[0;35m"
 #define CYN "\e[0;36m"
 #define WHT "\e[0;37m"
+
+// INTENSE COLORS
+
+#define IBLK "\e[0;90m"
+#define IRED "\e[0;91m"
+#define IGRN "\e[0;92m"
+#define IYEL "\e[0;93m"
+#define IBLU "\e[0;94m"
+#define IMAG "\e[0;95m"
+#define ICYN "\e[0;96m"
+#define IWHT "\e[0;97m"
+
+// NO COLOR
+
 #define CLR "CLR"
 
 // SCREEN STRUCTURE
 
-struct screen{
+typedef struct {
 	char colors[100][100][8];
 	int w;
 	int h;
-};
+} screen;
 
 // SCREEN CONSTRUCTOR
 
-struct screen new_screen(int w, int h);
+screen init_screen(int w, int h);
 
 // SCREEN DRAW
 
-struct screen draw_screen(struct screen surface, int x, int y, char draw_color[8]);
+screen draw_screen(screen surface, int x, int y, char draw_color[8]);
 
 // SCREEN FILL
 
-struct screen fill_screen(struct screen surface, char fill_color[8]);
+screen fill_screen(screen surface, char fill_color[8]);
 
 // SCREEN RENDER
 
-void render_screen(struct screen surface);
+void render_screen(screen surface);
 
 #endif
