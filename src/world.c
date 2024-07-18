@@ -9,14 +9,32 @@
 
 tile init_tile(tile_type type, int x, int y){
 	tile inst;
+	inst.x = x;
+	inst.y = y;
+	inst.w = 10;
+	inst.h = 10;
+	char *img_data[10][10];
 	switch(type){
+		case checker:
+			img_data = checker_data
 		case grass:
-			inst.type = type;
-			inst.x = x;
-			inst.y = y;
-			inst.w = 10;
-			inst.h = 10;
-			inst.sprite = init_img(grass_data, 10, 10);
+			img_data = grass_data;
 	}
+	inst.sprite = init_img(img_data, 10, 10);
 	return inst;
+}
+
+// WORLD CONSTRUCTOR
+
+world init_world(int w, int h){
+	world inst;
+	inst.w = w;
+	inst.h = h;
+	return inst;
+}
+
+// RENDER WORLD
+
+void render_world(world wrld){
+	
 }
