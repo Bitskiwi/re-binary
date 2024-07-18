@@ -2,25 +2,24 @@
 
 #include "head/world.h"
 #include "head/img.h"
+#include "head/screen.h"
+#include "assets/tiles/checker.h"
 #include "assets/tiles/grass.h"
 #include <stdio.h>
+#include <string.h>
 
 // TILE CONSTRUCTOR
 
-tile init_tile(tile_type type, int x, int y){
+tile init_tile(tile_type type){
 	tile inst;
-	inst.x = x;
-	inst.y = y;
 	inst.w = 10;
 	inst.h = 10;
-	char *img_data[10][10];
 	switch(type){
 		case checker:
-			img_data = checker_data
+			inst.sprite = init_img(checker_data, 10, 10);
 		case grass:
-			img_data = grass_data;
+			inst.sprite = init_img(grass_data, 10, 10);
 	}
-	inst.sprite = init_img(img_data, 10, 10);
 	return inst;
 }
 
@@ -30,11 +29,21 @@ world init_world(int w, int h){
 	world inst;
 	inst.w = w;
 	inst.h = h;
+	for(int y = 0; y < inst.h; y++){
+		for(int x = 0; x < inst.w; x++){
+			//inst.tiles[y][x] = init_tile(checker);
+		}
+	}
 	return inst;
 }
 
 // RENDER WORLD
 
-void render_world(world wrld){
-	
+screen draw_world(screen surf, world wrld){
+	for(int y = 0; y < wrld.h; y++){
+		for(int x = 0; x < wrld.w; x++){
+			draw_img(surf, x * 10, y * 10, wrld.tiles[y][x].sprite);
+		}
+	}
+	return surf;
 }

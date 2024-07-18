@@ -9,7 +9,7 @@
 
 // DATA
 
-char *grass_data[10][10] = {
+char *grass_data[20][20] = {
 	{ GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, },
 	{ GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, },
 	{ GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, },

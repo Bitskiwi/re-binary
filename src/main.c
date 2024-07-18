@@ -21,20 +21,21 @@ int main(){
 	tcsetattr(STDIN_FILENO, TCSANOW, &term);
 
 	screen surface = init_screen(80, 40);
-	surface = fill_screen(surface, GRN);
+	//surface = fill_screen(surface, GRN);
 
+	world map = init_world(10, 10);
 	character terry = init_character(0, 0, 10, 10);
 	char key = 's';
 	while(1){
 		printf("\033[H");
-		surface = fill_screen(surface, GRN);
-		surface = draw_character(surface, terry);
-		render_screen(surface);
 		char key = getchar();
 		if(key == 'q'){
 			break;
 		}
 		terry = control_character(key, terry);
+		surface = draw_world(surface, map);
+		surface = draw_character(surface, terry);
+		render_screen(surface);
 	}
 	term.c_lflag |= (ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, TCSANOW, &term);
