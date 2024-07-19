@@ -3,24 +3,22 @@
 #include "head/world.h"
 #include "head/img.h"
 #include "head/screen.h"
+#include "sprites.h"
 #include "assets/tiles/checker.h"
 #include "assets/tiles/grass.h"
 #include <stdio.h>
 #include <string.h>
 
-// TILE CONSTRUCTOR
+// DRAW TILE
 
-tile init_tile(tile_type type){
-	tile inst;
-	inst.w = 10;
-	inst.h = 10;
-	switch(type){
+screen draw_tile(screen surf, tile til, int x, int y){
+	switch(til){
 		case checker:
-			inst.sprite = init_img(checker_data, 10, 10);
+			surf = draw_img(surf, x * 10, y * 10, checker_img);
 		case grass:
-			inst.sprite = init_img(grass_data, 10, 10);
+			surf = draw_img(surf, x * 10, y * 10, grass_img);
 	}
-	return inst;
+	return surf;
 }
 
 // WORLD CONSTRUCTOR
@@ -31,7 +29,7 @@ world init_world(int w, int h){
 	inst.h = h;
 	for(int y = 0; y < inst.h; y++){
 		for(int x = 0; x < inst.w; x++){
-			//inst.tiles[y][x] = init_tile(checker);
+			inst.tiles[y][x] = checker;
 		}
 	}
 	return inst;
@@ -39,10 +37,10 @@ world init_world(int w, int h){
 
 // RENDER WORLD
 
-screen draw_world(screen surf, world wrld){
-	for(int y = 0; y < wrld.h; y++){
-		for(int x = 0; x < wrld.w; x++){
-			draw_img(surf, x * 10, y * 10, wrld.tiles[y][x].sprite);
+screen draw_world(screen surf, world map){
+	for(int y = 0; y < map.h; y++){
+		for(int x = 0; x < map.w; x++){
+			surf = draw_tile(surf, map.tiles[y][x], x, y);
 		}
 	}
 	return surf;

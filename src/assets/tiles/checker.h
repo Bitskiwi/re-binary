@@ -23,4 +23,3 @@ char *checker_data[20][20] = {
 };
 
 #endif
-

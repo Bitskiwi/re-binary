@@ -8,22 +8,13 @@
 #include "img.h"
 #include "screen.h"
 
-// TILE CODES
+// TILE TYPE ENUM
 
 typedef enum {
 	checker,
 	grass,
 	dirt,
 	stone,
-} tile_type;
-
-// TILE STRUCTURE
-
-typedef struct {
-	tile_type type;
-	int w;
-	int h;
-	img sprite;
 } tile;
 
 // WORLD STRUCTURE
@@ -34,9 +25,9 @@ typedef struct {
 	int h;
 } world;
 
-// TILE CONSTRUCTOR
+// DRAW TILE
 
-tile init_tile(tile_type type);
+screen draw_tile(screen surf, tile til, int x, int y);
 
 // WORLD CONSTRUCTOR
 
@@ -44,6 +35,6 @@ world init_world(int w, int h);
 
 // RENDER WORLD
 
-screen draw_world(screen surf, world wrld);
+screen draw_world(screen surf, world map);
 
 #endif

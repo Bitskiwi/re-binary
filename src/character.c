@@ -3,10 +3,6 @@
 #include "head/character.h"
 #include "head/direction.h"
 #include "head/img.h"
-#include "assets/terry/idle_s.h"
-#include "assets/terry/idle_e.h"
-#include "assets/terry/idle_n.h"
-#include "assets/terry/idle_w.h"
 
 // CHARACTER CONSTRUCTOR
 
@@ -15,7 +11,7 @@ character init_character(int x, int y, int w, int h){
 	img idle_e = init_img(idle_e_data, 10, 10);
 	img idle_n = init_img(idle_n_data, 10, 10);
 	img idle_w = init_img(idle_w_data, 10, 10);
-	img idle[4] = {idle_s, idle_e, idle_n, idle_w};
+	img idle[4] = {idle_s_img, idle_e_img, idle_n_img, idle_w_img};
 	character inst;
 	inst.x = x;
 	inst.y = y;
