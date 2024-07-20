@@ -2,12 +2,6 @@
 
 #include "head/img.h"
 #include "head/screen.h"
-#include "assets/terry/idle_s.h"
-#include "assets/terry/idle_e.h"
-#include "assets/terry/idle_n.h"
-#include "assets/terry/idle_w.h"
-#include "assets/tiles/checker.h"
-#include "assets/tiles/grass.h"
 #include <string.h>
 
 // IMG CONSTRUCTOR

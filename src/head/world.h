@@ -21,13 +21,14 @@ typedef enum {
 
 typedef struct {
 	tile tiles[20][20];
+	img sprites[4];
 	int w;
 	int h;
 } world;
 
 // DRAW TILE
 
-screen draw_tile(screen surf, tile til, int x, int y);
+screen draw_tile(screen surf, world map, tile til, int x, int y);
 
 // WORLD CONSTRUCTOR
 
