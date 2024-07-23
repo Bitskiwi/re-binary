@@ -28,14 +28,14 @@ int main(){
 	char key = 's';
 	while(1){
 		printf("\033[H");
-		char key = getchar();
-		if(key == 'q'){
-			break;
-		}
 		terry = control_character(key, terry);
 		surface = draw_world(surface, map);
 		surface = draw_character(surface, terry);
 		render_screen(surface);
+		key = getchar();
+		if(key == 'q'){
+			break;
+		}
 	}
 	term.c_lflag |= (ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, TCSANOW, &term);

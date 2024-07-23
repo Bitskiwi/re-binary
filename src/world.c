@@ -32,6 +32,7 @@ world init_world(int w, int h){
 			inst.tiles[y][x] = checker;
 		}
 	}
+	inst.tiles[1][1] = grass;
 	return inst;
 }
 
