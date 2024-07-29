@@ -10,22 +10,33 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <termios.h>
+#include <time.h>
 
 // MAIN
 
 int main(){
+	screen surface = init_screen(80, 40);
+	printf("> initialized screen");
+	//surface = fill_screen(surface, GRN);
+
+	world map = init_world(10, 10);
+	printf("> initialized world");
+
+	map = spawn_biome(map, grass, 1, 1, 2);
+	printf("> spawned biomes");
+
+	character terry = init_character(0, 0, 10, 10);
+	printf("> initialized character");
+
+	getchar();
+
+	char key = 's';
 	system("clear");
 	struct termios term;
 	tcgetattr(STDIN_FILENO, &term);
 	term.c_lflag &= ~(ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, TCSANOW, &term);
 
-	screen surface = init_screen(80, 40);
-	//surface = fill_screen(surface, GRN);
-
-	world map = init_world(10, 10);
-	character terry = init_character(0, 0, 10, 10);
-	char key = 's';
 	while(1){
 		printf("\033[H");
 		terry = control_character(key, terry);
